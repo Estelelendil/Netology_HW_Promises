@@ -1,6 +1,10 @@
-// TODO: write your code here
-import sum from './basic';
+/* eslint-disable new-cap */
+import GameSavingLoader from './class';
+import json from './parser';
 
-// console.log('worked');
+const gameSaving = new GameSavingLoader.load().then((saving) => {
+  json(saving);
+}).catch((error) => { console.error(error); });
+console.log(gameSaving);
 
-// console.log(sum([1, 2]));
+// saving объект класса GameSaving
